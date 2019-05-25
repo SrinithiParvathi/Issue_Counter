@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1 {
+  color: white;
+  text-shadow: 3px 2px red;
+  text-align: center;
+}
+h2{
+ color: black;
+}
+label{
+color: white;
+}
+label {
+    display: black;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+input[type=submit]
+{
+ background-color:Gray;
+  border: none;
+  color: black;
+  padding: 14px 30px;
+  text-decoration: none;
+  margin: 2px 2px;
+  cursor: pointer;
+}
+input,
+label {
+    margin: .4rem 0;
+}
+
+.note {
+    font-size: .8em;
+}
+input[type=text] {
+  color:black; 
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid black;
+  border-radius: 4px;
+}
+</style>
+</head>
+<body>
+<h1>Open Issues in GIT HUB</h1>
+<h2>Input the link to fetch issues:</h2>
+
+<form action = "http://127.0.0.1:5000/getIssues" method = "POST">
+  <p>Link <input type = "text" name = "link" /></p>
+   <input type = "submit" value = "Submit" />
+</form>
+</body>
+</html>
