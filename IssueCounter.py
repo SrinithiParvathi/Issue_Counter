@@ -50,7 +50,7 @@ def write_issues(response):
     global total
     if response.status_code != 200:
         # if status code is not 200 exception is raised else response for issues is processed
-        raise Exception(response.status_code)
+        return json.dumps({'Incorrect URL':500})
     for issue in response.json():
         if 'pull_request' not in issue:
             labels = ', '.join([l['name'] for l in issue['labels']])
