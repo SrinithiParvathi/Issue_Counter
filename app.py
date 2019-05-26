@@ -20,6 +20,8 @@ def get_issues():
 
 
 if __name__ == '__main__':
+	global total
+	total=0
     app.debug = True
     app.run()
     app.run(debug=True)
