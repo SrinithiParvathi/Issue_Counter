@@ -12,12 +12,13 @@ def login():
     return render_template('login.html')  # main page to input link
 
 
-@app.route('/getIssues', methods=['POST'])
+@app.route('/getIssues', methods=['GET'])
 def get_issues():
-    url = request.form.to_dict()
+    url = request.args.get('link')
     # input link is passed through the url and passed to hit_url function to fetch the count
-    res = hit_url(url['link'])
-    return render_template("result.html", result=json.loads(res))
+    res = hit_url(str(url))
+   
+    return render_template("result.html",result = json.loads(res))
 
 
 if __name__ == '__main__':

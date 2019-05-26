@@ -3,8 +3,8 @@
 <head>
 <style>
 h1 {
-  color: white;
-  text-shadow: 3px 2px red;
+  color: black;
+  text-shadow: 2px 2px gray;
   text-align: center;
 }
 h2{
@@ -19,9 +19,9 @@ label {
 }
 input[type=submit]
 {
- background-color:Gray;
+ background-color:black;
   border: none;
-  color: black;
+  color: white;
   padding: 14px 30px;
   text-decoration: none;
   margin: 2px 2px;
@@ -36,7 +36,7 @@ label {
     font-size: .8em;
 }
 input[type=text] {
-  color:black; 
+  color:white; 
   width: 50%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -50,7 +50,7 @@ input[type=text] {
 <h1>Open Issues in GIT HUB</h1>
 <h2>Input the link to fetch issues:</h2>
 
-<form action = "/getIssues" method = "POST">
+<form action = "/getIssues" method = "GET">
   <p>Link <input type = "text" name = "link" /></p>
    <input type = "submit" value = "Submit" />
 </form>
