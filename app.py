@@ -15,8 +15,6 @@ def login():
 @app.route('/getIssues', methods=['POST'])
 def get_issues():
     url = request.form.to_dict()
-    global total
-    total = 0
     # input link is passed through the url and passed to hit_url function to fetch the count
     res = hit_url(url['link'])
     return render_template("result.html", result=json.loads(res))
