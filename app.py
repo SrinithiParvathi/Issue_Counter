@@ -3,7 +3,7 @@ from flask import request, render_template
 from flask import jsonify
 import json
 
-from application import *
+from IssueCounter import *
 app = Flask(__name__)
 
 
