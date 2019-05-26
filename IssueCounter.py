@@ -7,7 +7,7 @@ result = 0
 # its a base url to fetch open issuses from github
 BASE_URL = 'https://api.github.com/repos/'
 END_POINT = '/issues'
-total=0
+total = 0
 
 # Function to fetch result based on input url
 
@@ -18,9 +18,9 @@ def hit_url(url):
     # url is the input link from which issues has to be fetched
     REQUEST_URL = BASE_URL + url + END_POINT
     print(REQUEST_URL)
+    result = json.dumps({'Total Issues': total})
     response = requests.get(REQUEST_URL)
     count = write_issues(response)
-
     if 'link' in response.headers:  # if there are more than one page
         pages = {rel[6:-1]: url[url.index('<') + 1: -1] for url, rel in
                  (link.split(';') for link in
@@ -36,7 +36,8 @@ def hit_url(url):
             count += result
             if pages['next'] == pages['last']:
                 break
-    return result
+        return result
+    return count
 
 
 # Function to process the response object parse it and counts the open issuses based on different filter
@@ -70,4 +71,5 @@ def write_issues(response):
     total += count
     result = json.dumps({'Less than 24hrs': count1, 'More than 24hrs Less than week': count2,      # here we return an json object wih the counts to hit_url_url
                          'More than 7 days': count3, 'Total count': total})
+    print(result)
     return result
