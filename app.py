@@ -3,7 +3,7 @@ from flask import request
 from flask import jsonify
 import json
 
-from app import *
+from application import *
 app = Flask(__name__)
 
 @app.route('/getIssues',methods=['POST'])
